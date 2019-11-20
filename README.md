@@ -1,4 +1,5 @@
 # boilerplate
+My personal boilerplate that uses Vue, TypeScript, Pug and Sass
 
 ## Project setup
 ```
