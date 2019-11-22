@@ -1,5 +1,19 @@
 # boilerplate
-My personal boilerplate that uses vue, vuex, vue-router, vuetify, typescript, pug and sass.
+Personal boilerplate that makes use of my favourite stack
+
+#### Stack
+- Vue (vuex, vue-router)
+- Vuetify
+- TypeScript
+- Pug
+- Sass
+- i18n
+
+#### TODO list
+- Add axios
+- Convert layouts to vuetify elements
+- Change theme colors
+- Setup css export to single file
 
 ##### Project setup
 ```

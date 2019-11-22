@@ -12,7 +12,7 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'object-curly-spacing': 'error',
-    'space-in-parens': [ 'error', 'always', { 'exceptions': [ '[]', ], }, ],
+    'space-in-parens': [ 'error', 'always', ],
     'comma-dangle': [ 'error', {
       'arrays': 'always',
       'objects': 'always',
@@ -20,6 +20,7 @@ module.exports = {
       'exports': 'never',
       'functions': 'never',
     }, ],
+    'space-before-function-paren': [ 'error', 'never', ],
   },
   parserOptions: {
     parser: '@typescript-eslint/parser',

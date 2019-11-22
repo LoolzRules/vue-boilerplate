@@ -1,7 +1,7 @@
 <template lang="pug">
-  div.home
+  div#home
     img(alt='Vue logo' src='@/assets/logo.png')
-    hello-world(msg='Welcome to Your Vue.js App')
+    hello-world(:msg='$t("views.Home.message")')
 </template>
 
 <script lang="ts">
@@ -17,3 +17,8 @@ export default class Home extends Vue {
   @Prop() private msg!: string
 }
 </script>
+
+<style lang="sass">
+#home
+  text-align: center
+</style>

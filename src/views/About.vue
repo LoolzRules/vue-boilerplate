@@ -1,4 +1,9 @@
 <template lang="pug">
-  div.about
-    h1 This is an about page
+  div#about
+    h1 {{ $t("views.About.main") }}
 </template>
+
+<style lang="sass">
+#about
+  text-align: center
+</style>

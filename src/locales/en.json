@@ -1,0 +1,42 @@
+{
+  "App": {
+    "name": "Boilerplate",
+    "nav": {
+      "home": "Home",
+      "about": "About"
+    }
+  },
+  "components": {
+    "HelloWorld": {
+      "_main": [
+        "For a guide and recipes on how to configure/customize this project,",
+        "check out the ",
+        "vue-cli documentation"
+      ],
+      "installedPlugins": "Installed CLI Plugins",
+      "essentialLinks": {
+        "_main": "Essential Links",
+        "coreDocs": "Core Docs",
+        "forum": "Forum",
+        "communityChat": "Community Chat",
+        "twitter": "Twitter",
+        "news": "News"
+      },
+      "ecosystem": "Ecosystem"
+    }
+  },
+  "views": {
+    "About": {
+      "main": "This is an about page"
+    },
+    "Home": {
+      "message": "Нello!"
+    }
+  },
+  "$vuetify": {
+    "dataIterator": {
+      "rowsPerPageText": "Items per page:",
+      "pageText": "{0}-{1} of {2}"
+    }
+  }
+}

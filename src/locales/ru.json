@@ -1,0 +1,42 @@
+{
+  "App": {
+    "name": "Boilerplate",
+    "nav": {
+      "home": "Домашняя",
+      "about": "О проекте"
+    }
+  },
+  "components": {
+    "HelloWorld": {
+      "_main": [
+        "Для получения помощи по настройке этого проекта",
+        "обратитесь к ",
+        "документации vue-cli"
+      ],
+      "installedPlugins": "Установленные CLI Плагины",
+      "essentialLinks": {
+        "_main": "Основные Ссылки",
+        "coreDocs": "Документация",
+        "forum": "Форум",
+        "communityChat": "Чат Сообщества",
+        "twitter": "Twitter",
+        "news": "Новости"
+      },
+      "ecosystem": "Экосистема"
+    }
+  },
+  "views": {
+    "About": {
+      "main": "Это страница о проекте"
+    },
+    "Home": {
+      "message": "Привет!"
+    }
+  },
+  "$vuetify": {
+    "dataIterator": {
+      "rowsPerPageText": "Элементов на странице:",
+      "pageText": "{0}-{1} из {2}"
+    }
+  }
+}

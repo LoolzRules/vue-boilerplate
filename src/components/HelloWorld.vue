@@ -2,10 +2,14 @@
   - const attrs = {target: "_blank", rel: "noopener",}
   div.hello
     h1 {{ msg }}
-    p For a guide and recipes on how to configure/customize this project, #[br] check out the
-      |  #[a(href="https://cli.vuejs.org")&attributes(attrs) vue-cli documentation].
+    p
+      | {{ $t('components.HelloWorld._main[0]') }}
+      br
+      | {{ $t('components.HelloWorld._main[1]') }}
+      a(href="https://cli.vuejs.org")&attributes(attrs) {{ $t('components.HelloWorld._main[2]') }}
+      | .
 
-    h3 Installed CLI Plugins
+    h3 {{ $t('components.HelloWorld.installedPlugins') }}
     ul
       li
         a(href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel")&attributes(attrs) babel
@@ -16,26 +20,28 @@
       li
         a(href="https://github.com/vuetifyjs/vue-cli-plugin-vuetify")&attributes(attrs) vuetify
       li
+        a(href=" https://github.com/kazupon/vue-cli-plugin-i18n")&attributes(attrs) vue-i18n
+      li
         a(href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router")&attributes(attrs) router
       li
         a(href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-vuex")&attributes(attrs) vuex
       li
         a(href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint")&attributes(attrs) eslint
 
-    h3 Essential Links
+    h3 {{ $t("components.HelloWorld.essentialLinks._main") }}
     ul
       li
-        a(href="https://vuejs.org")&attributes(attrs) Core Docs
+        a(href="https://vuejs.org")&attributes(attrs) {{ $t("components.HelloWorld.essentialLinks.coreDocs") }}
       li
-        a(href="https://forum.vuejs.org")&attributes(attrs) Forum
+        a(href="https://forum.vuejs.org")&attributes(attrs) {{ $t("components.HelloWorld.essentialLinks.forum") }}
       li
-        a(href="https://chat.vuejs.org")&attributes(attrs) Community Chat
+        a(href="https://chat.vuejs.org")&attributes(attrs) {{ $t("components.HelloWorld.essentialLinks.communityChat") }}
       li
-        a(href="https://twitter.com/vuejs")&attributes(attrs) Twitter
+        a(href="https://twitter.com/vuejs")&attributes(attrs) {{ $t("components.HelloWorld.essentialLinks.twitter") }}
       li
-        a(href="https://news.vuejs.org")&attributes(attrs) News
+        a(href="https://news.vuejs.org")&attributes(attrs) {{ $t("components.HelloWorld.essentialLinks.news") }}
 
-    h3 Ecosystem
+    h3 {{ $t("components.HelloWorld.ecosystem") }}
     ul
       li
         a(href="https://router.vuejs.org")&attributes(attrs) vue-router
