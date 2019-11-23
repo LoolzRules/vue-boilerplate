@@ -4,16 +4,26 @@
       v-toolbar(color='primary', dark)
         v-toolbar-title {{ $t('App.name') }}
       v-list(dense)
-        v-list-item(:to='{ name: "home" }')
-          v-list-item-icon
-            v-icon mdi-home-outline
-          v-list-item-content
-            v-list-item-title {{ $t('App.nav.home') }}
-        v-list-item(:to='{ name: "about" }')
-          v-list-item-icon
-            v-icon mdi-information-outline
-          v-list-item-content
-            v-list-item-title {{ $t('App.nav.about') }}
+        -
+          const items = [
+            {
+              name: "home",
+              icon: "mdi-home-outline",
+              text: "{{ $t('App.nav.home') }}"
+            },
+            {
+              name: "about",
+              icon: "mdi-information-outline",
+              text: "{{ $t('App.nav.about') }}"
+            },
+          ]
+
+        each item in items
+          v-list-item(:to=`{ name: "${item.name}" }`)
+            v-list-item-icon
+              v-icon= item.icon
+            v-list-item-content
+              v-list-item-title= item.text
 
     v-app-bar(app, color='primary', dark)
       v-app-bar-nav-icon(@click='switchDrawer')
