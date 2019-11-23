@@ -1,13 +1,15 @@
 <template lang="pug">
   v-app
     v-navigation-drawer(app, v-model='drawer')
+      v-toolbar(color='primary', dark)
+        v-toolbar-title {{ $t('App.name') }}
       v-list(dense)
-        v-list-item(to='/')
+        v-list-item(:to='{ name: "home" }')
           v-list-item-icon
             v-icon mdi-home-outline
           v-list-item-content
             v-list-item-title {{ $t('App.nav.home') }}
-        v-list-item(to='/about')
+        v-list-item(:to='{ name: "about" }')
           v-list-item-icon
             v-icon mdi-information-outline
           v-list-item-content
@@ -15,7 +17,6 @@
 
     v-app-bar(app, color='primary', dark)
       v-app-bar-nav-icon(@click='switchDrawer')
-      v-toolbar-title {{ $t('App.name') }}
       v-spacer
       v-toolbar-items
         v-menu(absolute, v-model='localeMenu')
@@ -34,9 +35,8 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
 import { mapState } from 'vuex'
-import { getSomething } from '@/requests'
 
 @Component( {
   computed: {
@@ -49,10 +49,10 @@ import { getSomething } from '@/requests'
 export default class App extends Vue {
   public locales!: Array<string>
   public localeIndex!: number
-  @Prop( { default: false, } ) private drawer!: boolean
-  @Prop( { default: false, } ) private localeMenu!: boolean
+  public drawer: boolean = false
+  public localeMenu: boolean = false
 
-  public updateLocale( index: number ): void {
+  updateLocale( index: number ): void {
     this.$store.dispatch( 'setLocale', index )
       .then( _ => {
         this.$i18n.locale = this.locales[this.localeIndex]
@@ -60,13 +60,8 @@ export default class App extends Vue {
       } )
   }
 
-  public switchDrawer(): void {
+  switchDrawer(): void {
     this.drawer = !this.drawer
-  }
-
-  public requestSomething(): void {
-    getSomething()
-      .then( console.log )
   }
 }
 </script>

@@ -7,8 +7,14 @@ Vue.use( VueRouter )
 const routes = [
   {
     path: '/',
+    redirect: '/home',
+  },
+  {
+    path: '/home',
     name: 'home',
     component: Home,
+    // If props set to true, any params will be passed to Home
+    props: true,
   },
   {
     path: '/about',

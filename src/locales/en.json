@@ -7,8 +7,8 @@
     }
   },
   "components": {
-    "HelloWorld": {
-      "_main": [
+    "Info": {
+      "main": [
         "For a guide and recipes on how to configure/customize this project,",
         "check out the ",
         "vue-cli documentation"
@@ -26,10 +26,15 @@
     }
   },
   "views": {
-    "About": {
-      "main": "This is an about page"
-    },
     "Home": {
+      "main": "I'm trying to load something, check the console",
+      "loadedText": [
+        "Oops, did not load",
+        "Wow, it loaded!"
+      ]
+    },
+    "About": {
+      "logoAlt": "Vue logo",
       "message": "Нello!"
     }
   }

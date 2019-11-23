@@ -1,7 +1,5 @@
-# boilerplate
-Personal boilerplate that makes use of my favourite stack
-
-#### Stack
+# vue-ts-boilerplate
+Personal boilerplate that is based on the following stack:
 - Vue (vuex, vue-router)
 - Vuetify
 - TypeScript
@@ -11,7 +9,7 @@ Personal boilerplate that makes use of my favourite stack
 - axios
 
 #### TODO list
-- Add proper axios use case
+- ?
 
 ##### Project setup
 ```

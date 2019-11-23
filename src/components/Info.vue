@@ -3,13 +3,13 @@
   v-flex(shrink)
     h1 {{ msg }}
     p
-      | {{ $t('components.HelloWorld._main[0]') }}
+      | {{ $t('components.Info.main[0]') }}
       br
-      | {{ $t('components.HelloWorld._main[1]') }}
-      a(href="https://cli.vuejs.org")&attributes(attrs) {{ $t('components.HelloWorld._main[2]') }}
+      | {{ $t('components.Info.main[1]') }}
+      a(href="https://cli.vuejs.org")&attributes(attrs) {{ $t('components.Info.main[2]') }}
       | .
 
-    h3 {{ $t('components.HelloWorld.installedPlugins') }}
+    h3 {{ $t('components.Info.installedPlugins') }}
     ul
       li
         a(href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel")&attributes(attrs) babel
@@ -28,20 +28,20 @@
       li
         a(href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint")&attributes(attrs) eslint
 
-    h3 {{ $t("components.HelloWorld.essentialLinks._main") }}
+    h3 {{ $t("components.Info.essentialLinks._main") }}
     ul
       li
-        a(href="https://vuejs.org")&attributes(attrs) {{ $t("components.HelloWorld.essentialLinks.coreDocs") }}
+        a(href="https://vuejs.org")&attributes(attrs) {{ $t("components.Info.essentialLinks.coreDocs") }}
       li
-        a(href="https://forum.vuejs.org")&attributes(attrs) {{ $t("components.HelloWorld.essentialLinks.forum") }}
+        a(href="https://forum.vuejs.org")&attributes(attrs) {{ $t("components.Info.essentialLinks.forum") }}
       li
-        a(href="https://chat.vuejs.org")&attributes(attrs) {{ $t("components.HelloWorld.essentialLinks.communityChat") }}
+        a(href="https://chat.vuejs.org")&attributes(attrs) {{ $t("components.Info.essentialLinks.communityChat") }}
       li
-        a(href="https://twitter.com/vuejs")&attributes(attrs) {{ $t("components.HelloWorld.essentialLinks.twitter") }}
+        a(href="https://twitter.com/vuejs")&attributes(attrs) {{ $t("components.Info.essentialLinks.twitter") }}
       li
-        a(href="https://news.vuejs.org")&attributes(attrs) {{ $t("components.HelloWorld.essentialLinks.news") }}
+        a(href="https://news.vuejs.org")&attributes(attrs) {{ $t("components.Info.essentialLinks.news") }}
 
-    h3 {{ $t("components.HelloWorld.ecosystem") }}
+    h3 {{ $t("components.Info.ecosystem") }}
     ul
       li
         a(href="https://router.vuejs.org")&attributes(attrs) vue-router
@@ -60,9 +60,9 @@
 import { Component, Prop, Vue } from 'vue-property-decorator'
 
 @Component( {
-  name: 'hello-world',
+  name: 'info',
 } )
-export default class HelloWorld extends Vue {
+export default class Info extends Vue {
   @Prop() private msg!: string
 }
 </script>
