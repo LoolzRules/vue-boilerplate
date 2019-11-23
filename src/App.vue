@@ -36,6 +36,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import { mapState } from 'vuex'
+import { getSomething } from '@/requests'
 
 @Component( {
   computed: {
@@ -62,24 +63,10 @@ export default class App extends Vue {
   public switchDrawer(): void {
     this.drawer = !this.drawer
   }
+
+  public requestSomething(): void {
+    getSomething()
+      .then( console.log )
+  }
 }
 </script>
-
-<style lang="sass">
-#app
-  font-family: 'Avenir', Helvetica, Arial, sans-serif
-  -webkit-font-smoothing: antialiased
-  -moz-osx-font-smoothing: grayscale
-  color: #2c3e50
-
-#nav
-  padding: 30px
-
-  a
-    font-weight: bold
-    color: #2c3e50
-
-    &.router-link-exact-active
-      color: #42b983
-
-</style>

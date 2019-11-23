@@ -8,12 +8,10 @@ Personal boilerplate that makes use of my favourite stack
 - Pug
 - Sass
 - i18n
+- axios
 
 #### TODO list
-- Add axios
-- Convert layouts to vuetify elements
-- Change theme colors
-- Setup css export to single file
+- Add proper axios use case
 
 ##### Project setup
 ```

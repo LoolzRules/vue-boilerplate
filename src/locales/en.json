@@ -32,11 +32,5 @@
     "Home": {
       "message": "Нello!"
     }
-  },
-  "$vuetify": {
-    "dataIterator": {
-      "rowsPerPageText": "Items per page:",
-      "pageText": "{0}-{1} of {2}"
-    }
   }
 }

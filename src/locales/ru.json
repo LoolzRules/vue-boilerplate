@@ -32,11 +32,5 @@
     "Home": {
       "message": "Привет!"
     }
-  },
-  "$vuetify": {
-    "dataIterator": {
-      "rowsPerPageText": "Элементов на странице:",
-      "pageText": "{0}-{1} из {2}"
-    }
   }
 }

@@ -1,7 +1,8 @@
 <template lang="pug">
-  div#home
-    img(alt='Vue logo' src='@/assets/logo.png')
-    hello-world(:msg='$t("views.Home.message")')
+  v-container#home(fill-height)
+    v-layout(justify-center, align-center, column)
+      img(alt='Vue logo' src='@/assets/logo.png')
+      hello-world(:msg='$t("views.Home.message")')
 </template>
 
 <script lang="ts">

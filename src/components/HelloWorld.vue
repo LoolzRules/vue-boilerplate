@@ -1,6 +1,6 @@
 <template lang="pug">
   - const attrs = {target: "_blank", rel: "noopener",}
-  div.hello
+  v-flex(shrink)
     h1 {{ msg }}
     p
       | {{ $t('components.HelloWorld._main[0]') }}
