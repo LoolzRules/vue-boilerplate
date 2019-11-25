@@ -9,7 +9,7 @@ Personal boilerplate that is based on the following stack:
 - axios
 
 #### TODO list
-- ?
+- Add PWA logic
 
 ##### Project setup
 ```
