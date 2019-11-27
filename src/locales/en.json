@@ -36,6 +36,11 @@
     "About": {
       "logoAlt": "Vue logo",
       "message": "Нello!"
+    },
+    "NotFound": {
+      "code": "404",
+      "main": "Requested page was not found",
+      "return": "Return"
     }
   }
 }
