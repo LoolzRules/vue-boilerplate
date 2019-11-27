@@ -22,11 +22,11 @@ export default class Home extends Vue {
   requestSomething(): void {
     getSomething()
       .then( resp => {
-        console.log( resp )
+        console.info( resp )
         this.success = true
       } )
       .catch( () => {
-        console.log( 'Bad connection with backend?' )
+        console.error( 'Bad connection with backend?' )
         this.success = false
       } )
       .finally( () => {
