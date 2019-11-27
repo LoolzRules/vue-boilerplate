@@ -3,7 +3,8 @@
     "name": "Boilerplate",
     "nav": {
       "home": "Домашняя",
-      "about": "О проекте"
+      "about": "О проекте",
+      "github": "GitHub"
     }
   },
   "components": {

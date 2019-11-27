@@ -1,6 +1,6 @@
 {
   "name": "boilerplate",
-  "version": "1.4.1",
+  "version": "1.4.4",
   "private": false,
   "scripts": {
     "start": "node server.js",

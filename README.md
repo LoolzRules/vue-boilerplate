@@ -10,6 +10,7 @@ Personal boilerplate that is based on the following stack:
 
 #### TODO list
 - Add PWA logic
+- Improve home page
 
 ##### Project setup
 ```

@@ -10,12 +10,20 @@ export default new Vuex.Store( {
     SET_LOCALE( state: CoreState, newLocaleIndex: number ): void {
       if ( newLocaleIndex < state.locales.length ) {
         state.localeIndex = newLocaleIndex
+        localStorage.setItem( state.localStorageKeys.locale, `${newLocaleIndex}` )
       }
+    },
+    SET_THEME_TO_DARK( state: CoreState, isDark: boolean ): void {
+      state.themeIsDark = isDark
+      localStorage.setItem( state.localStorageKeys.theme, `${isDark}` )
     },
   },
   actions: {
     setLocale( { commit, state, }, index: number ): void {
       commit( 'SET_LOCALE', index )
+    },
+    setThemeToDark( { commit, state, }, isDark: boolean ): void {
+      commit( 'SET_THEME_TO_DARK', isDark )
     },
   },
   modules: {},
