@@ -5,6 +5,10 @@
       "home": "Home",
       "about": "About",
       "github": "GitHub"
+    },
+    "menus": {
+      "localeButtonName": "Change locale",
+      "themeButtonName": "Change theme"
     }
   },
   "components": {

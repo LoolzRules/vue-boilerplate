@@ -2,8 +2,8 @@
   v-container#home(fill-height)
     v-layout(justify-center, align-center, column)
       h1.mb-2 {{ $t('views.Home.main') }}
-      v-skeleton-loader(v-if='loading', type='text', width='180px', loading)
-      span(v-else) {{ $t(`views.Home.loadedText[${+success}]`) }}
+      v-skeleton-loader(v-if="loading", type="text", width="180px", loading)
+      span(v-else) {{ $t( `views.Home.loadedText[${+success}]` ) }}
 </template>
 
 <script lang="ts">

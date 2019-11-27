@@ -1,7 +1,7 @@
 <template lang="pug">
   v-app
-    v-navigation-drawer(app, v-model='drawer')
-      v-toolbar(color='primary', dark)
+    v-navigation-drawer(app, v-model="drawer")
+      v-toolbar(color="primary", dark)
         v-toolbar-title {{ $t('App.name') }}
       v-list(dense)
         -
@@ -37,29 +37,39 @@
           ]
 
         each link in links
-          v-list-item(href=link.href, target='_blank')
+          v-list-item(href=link.href, target="_blank")
             v-list-item-icon
               v-icon= link.icon
             v-list-item-content
               v-list-item-title= link.text
 
-    v-app-bar(app, color='primary', dark)
-      v-app-bar-nav-icon(@click='switchDrawer')
+    v-app-bar(app, color="primary", dark)
+      v-app-bar-nav-icon(@click="switchDrawer")
       v-spacer
       v-toolbar-items
-        v-menu(absolute, v-model='localeMenu')
-          template(v-slot:activator='{ on }')
-            v-btn(v-on='on', depressed, icon) {{ locales[localeIndex] }}
+        v-menu(absolute, v-model="localeMenu")
+          template(v-slot:activator="{ on }")
+            v-btn(
+              v-on="on",
+              :name="$t( 'App.menus.localeButtonName' )",
+              depressed,
+              icon
+            ) {{ locales[localeIndex] }}
           template(v-slot:default)
             v-list
               v-list-item(
-                v-for='(locale, index) in locales',
-                :key='index',
-                @click='updateLocale(index)',
+                v-for="(locale, index) in locales",
+                :key="index",
+                @click="updateLocale(index)",
               )
                 v-list-item-title {{ locale.toUpperCase() }}
 
-        v-btn(@click='switchTheme', depressed, icon)
+        v-btn(
+          @click="switchTheme",
+          :name="$t( 'App.menus.themeButtonName' )",
+          depressed,
+          icon
+        )
           v-icon mdi-theme-light-dark
 
     v-content

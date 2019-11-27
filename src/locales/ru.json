@@ -5,6 +5,10 @@
       "home": "Домашняя",
       "about": "О проекте",
       "github": "GitHub"
+    },
+    "menus": {
+      "localeButtonName": "Сменить язык",
+      "themeButtonName": "Сменить тему"
     }
   },
   "components": {

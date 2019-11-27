@@ -1,8 +1,8 @@
 <template lang="pug">
   v-container#about(fill-height)
     v-layout(justify-center, align-center, column)
-      img(:alt='$t("views.About.logoAlt")' src='@/assets/logo.png')
-      info(:msg='$t("views.About.message")')
+      img(:alt="$t( 'views.About.logoAlt' )", src="@/assets/logo.png")
+      info(:msg="$t( 'views.About.message' )")
 </template>
 
 <script lang="ts">
