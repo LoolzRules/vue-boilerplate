@@ -16,7 +16,7 @@ export default class Home extends Vue {
   success: boolean = false
 
   mounted() {
-    // this.requestSomething()
+    this.requestSomething()
   }
 
   requestSomething(): void {

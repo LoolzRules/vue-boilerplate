@@ -14,7 +14,10 @@
           header: "{{ $t('components.Info.installedPlugins') }}",
           links: [
             { link: "https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel", text: "babel" },
-            { link: "https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript", text: "typescript" },
+            {
+              link: "https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript",
+              text: "typescript"
+            },
             { link: "https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa", text: "pwa" },
             { link: "https://github.com/vuetifyjs/vue-cli-plugin-vuetify", text: "vuetify" },
             { link: "https://github.com/kazupon/vue-cli-plugin-i18n", text: "vue-i18n" },
@@ -46,10 +49,10 @@
       ]
 
     each section in sections
-      h3= section.header
-      ul
+      h3.mt-8= section.header
+      ul.pa-0
         each item in section.links
-          li
+          li.mx-2
             a(href=item.link)&attributes(attrs)= item.text
 
 </template>
@@ -66,17 +69,10 @@ export default class Info extends Vue {
 </script>
 
 <style lang="sass">
-h3
-  margin: 40px 0 0
+#about
+  ul
+    list-style-type: none
 
-ul
-  list-style-type: none
-  padding: 0
-
-li
-  display: inline-block
-  margin: 0 10px
-
-a
-  color: #42b983
+  li
+    display: inline-block
 </style>

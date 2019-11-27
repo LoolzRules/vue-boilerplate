@@ -14,6 +14,11 @@ export default new Vuetify( {
   theme: {
     options: {
       customProperties: true,
+      minifyTheme( css ) {
+        return process.env.NODE_ENV === 'production'
+          ? css.replace( /[\r\n]/g, '' )
+          : css
+      },
     },
     themes: {
       light: {
@@ -24,6 +29,12 @@ export default new Vuetify( {
         info: colors.lightBlue.base,
         success: colors.green.base,
         warning: colors.orange.base,
+        anchor: colors.green.base,
+      },
+      dark: {
+        primary: colors.grey.darken4,
+        secondary: colors.grey.lighten1,
+        anchor: colors.green.base,
       },
     },
   },
