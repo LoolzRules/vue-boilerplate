@@ -1,4 +1,7 @@
-# vue-ts-boilerplate
+# vue-boilerplate
+
+[link to heroku app](https://loolzrules-vue-boilerplate.herokuapp.com) - check it out!
+
 Personal boilerplate that is based on the following stack:
 - Vue (vuex, vue-router)
 - Vuetify
