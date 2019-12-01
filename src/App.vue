@@ -2,19 +2,17 @@
   v-app
     v-navigation-drawer(app, v-model="drawer")
       v-toolbar(color="primary", dark)
-        v-toolbar-title {{ $t('App.name') }}
+        v-toolbar-title(v-t="'App.name'")
       v-list(dense)
         -
           const routes = [
             {
               name: "home",
               icon: "mdi-home-outline",
-              text: "{{ $t('App.nav.home') }}"
             },
             {
               name: "about",
               icon: "mdi-information-outline",
-              text: "{{ $t('App.nav.about') }}"
             },
           ]
 
@@ -23,7 +21,7 @@
             v-list-item-icon
               v-icon= route.icon
             v-list-item-content
-              v-list-item-title= route.text
+              v-list-item-title(v-t=`'App.nav.${route.name}'`)
 
         v-divider.my-2
 
@@ -32,7 +30,7 @@
             {
               href: "https://github.com/LoolzRules/vue-boilerplate",
               icon: "mdi-github-circle",
-              text: "{{ $t('App.nav.github') }}"
+              name: "github"
             }
           ]
 
@@ -41,21 +39,21 @@
             v-list-item-icon
               v-icon= link.icon
             v-list-item-content
-              v-list-item-title= link.text
+              v-list-item-title(v-t=`'App.nav.${link.name}'`)
 
     v-app-bar(app, color="primary", dark)
       v-app-bar-nav-icon(@click="switchDrawer")
       v-spacer
       v-toolbar-items
         v-menu(absolute, v-model="localeMenu")
-          template(v-slot:activator="{ on }")
+          template(#activator="{ on }")
             v-btn(
               v-on="on",
               :name="$t( 'App.menus.localeButtonName' )",
               depressed,
               icon
             ) {{ locales[localeIndex] }}
-          template(v-slot:default)
+          template(#default)
             v-list
               v-list-item(
                 v-for="(locale, index) in locales",
@@ -77,7 +75,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue, Watch } from 'vue-property-decorator'
 import { mapState } from 'vuex'
 
 @Component( {
@@ -100,10 +98,15 @@ export default class App extends Vue {
   public localeMenu: boolean = false
 
   beforeMount() {
-    // initialise properties from localStorage (or use default values)
     this.$i18n.locale = this.locales[this.localeIndex]
     this.$vuetify.lang.current = this.locales[this.localeIndex]
     this.$vuetify.theme.dark = this.themeIsDark
+    console.info( process.env.VUE_APP_TITLE )
+  }
+
+  @Watch( '$route' )
+  onTitleShouldChange() {
+    document.title = this.$t( this.$route.meta.title ) as string
   }
 
   switchDrawer(): void {
@@ -115,11 +118,12 @@ export default class App extends Vue {
       .then( _ => {
         this.$i18n.locale = this.locales[this.localeIndex]
         this.$vuetify.lang.current = this.locales[this.localeIndex]
+        this.onTitleShouldChange()
       } )
   }
 
   switchTheme(): void {
-    this.$store.dispatch( 'setThemeToDark', !this.themeIsDark )
+    this.$store.dispatch( 'setTheme', !this.themeIsDark )
       .then( _ => {
         this.$vuetify.theme.dark = this.themeIsDark
       } )

@@ -1,9 +1,9 @@
 {
   "App": {
-    "name": "Boilerplate",
+    "name": "vue-boilerplate",
     "nav": {
-      "home": "Home",
-      "about": "About",
+      "home": "@:views.Home.title",
+      "about": "@:views.About.title",
       "github": "GitHub"
     },
     "menus": {
@@ -14,24 +14,49 @@
   "components": {
     "Info": {
       "main": [
-        "For a guide and recipes on how to configure/customize this project,",
-        "check out the ",
+        "For a guide and recipes on how to configure/customize this project, check out the ",
         "vue-cli documentation"
       ],
-      "installedPlugins": "Installed CLI Plugins",
-      "essentialLinks": {
-        "_main": "Essential Links",
-        "coreDocs": "Core Docs",
-        "forum": "Forum",
-        "communityChat": "Community Chat",
-        "twitter": "Twitter",
-        "news": "News"
-      },
-      "ecosystem": "Ecosystem"
+      "sections": [
+        {
+          "title": "Installed CLI Plugins",
+          "text": [
+            "Babel",
+            "TypeScript",
+            "PWA",
+            "Vuetify",
+            "vue-i18n",
+            "vue-router",
+            "VueX",
+            "ESLint"
+          ]
+        },
+        {
+          "title": "Essential Links",
+          "text": [
+            "Core Docs",
+            "Forum",
+            "Community Chat",
+            "Twitter",
+            "News"
+          ]
+        },
+        {
+          "title": "Ecosystem",
+          "text": [
+            "vue-router",
+            "vuex",
+            "vue-devtools",
+            "vue-loader",
+            "awesome-vue"
+          ]
+        }
+      ]
     }
   },
   "views": {
     "Home": {
+      "title": "Home",
       "main": "I'm trying to load something, check the console",
       "loadedText": [
         "Oops, did not load",
@@ -39,10 +64,12 @@
       ]
     },
     "About": {
+      "title": "About",
       "logoAlt": "Vue logo",
       "message": "Нello!"
     },
     "NotFound": {
+      "title": "Page not found",
       "code": "404",
       "main": "Requested page was not found",
       "return": "Return"

@@ -1,8 +1,9 @@
 {
-  "name": "boilerplate",
+  "name": "vue-boilerplate",
   "version": "1.4.4",
   "private": false,
   "scripts": {
+    "start": "node server.js",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
@@ -11,9 +12,12 @@
   "dependencies": {
     "@mdi/font": "^3.6.95",
     "axios": "^0.19.0",
+    "compression": "^1.7.4",
     "core-js": "^3.3.2",
+    "express": "^4.17.1",
     "register-service-worker": "^1.6.2",
     "roboto-fontface": "*",
+    "serve-static": "^1.14.1",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
     "vue-i18n": "^8.0.0",
