@@ -16,17 +16,26 @@ const routes = [
     component: Home,
     // If props set to true, any params will be passed to Home
     props: true,
+    meta: {
+      title: 'views.Home.title',
+    },
   },
   {
     path: '/about',
     name: 'about',
     // Lazy component loading
     component: () => import( '../views/About.vue' ),
+    meta: {
+      title: 'views.About.title',
+    },
   },
   {
     path: '*',
     name: 'notFound',
     component: NotFound,
+    meta: {
+      title: 'views.NotFound.title',
+    },
   },
 ]
 
