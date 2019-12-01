@@ -2,6 +2,11 @@
   "name": "vue-boilerplate",
   "version": "1.5.0",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LoolzRules/vue-boilerplate"
+  },
+  "license": "MIT",
   "scripts": {
     "start": "node _server.js",
     "serve": "vue-cli-service serve",
@@ -27,6 +32,7 @@
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@mdi/js": "^4.6.95",
     "@types/webpack": "^4.4.0",
     "@vue/cli-plugin-babel": "^4.0.0",
     "@vue/cli-plugin-eslint": "^4.0.0",

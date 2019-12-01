@@ -8,18 +8,18 @@
           const routes = [
             {
               name: "home",
-              icon: "mdi-home-outline",
+              icon: "home",
             },
             {
               name: "about",
-              icon: "mdi-information-outline",
+              icon: "info",
             },
           ]
 
         each route in routes
           v-list-item(:to=`{ name: "${route.name}" }`)
             v-list-item-icon
-              v-icon= route.icon
+              v-icon= `{{ icons.${route.icon} }}`
             v-list-item-content
               v-list-item-title(v-t=`'App.nav.${route.name}'`)
 
@@ -29,7 +29,7 @@
           const links = [
             {
               href: "https://github.com/LoolzRules/vue-boilerplate",
-              icon: "mdi-github-circle",
+              icon: "github",
               name: "github"
             }
           ]
@@ -37,12 +37,13 @@
         each link in links
           v-list-item(href=link.href, target="_blank")
             v-list-item-icon
-              v-icon= link.icon
+              v-icon= `{{ icons.${link.icon} }}`
             v-list-item-content
               v-list-item-title(v-t=`'App.nav.${link.name}'`)
 
     v-app-bar(app, color="primary", dark)
       v-app-bar-nav-icon(@click="switchDrawer")
+        v-icon {{ icons.menu }}
       v-spacer
       v-toolbar-items
         v-menu(absolute, v-model="localeMenu")
@@ -68,7 +69,7 @@
           depressed,
           icon
         )
-          v-icon mdi-theme-light-dark
+          v-icon {{ icons.theme }}
 
     v-content
       router-view
@@ -77,6 +78,7 @@
 <script lang="ts">
 import { Component, Vue, Watch } from 'vue-property-decorator'
 import { mapState } from 'vuex'
+import { github, home, info, menu, theme } from '@/assets/icons'
 
 @Component( {
   computed: {
@@ -92,6 +94,15 @@ export default class App extends Vue {
   public locales!: Array<string>
   public localeIndex!: number
   public themeIsDark!: boolean
+
+  // it is important to manually import icons to reduce bundle size
+  public icons = {
+    menu,
+    home,
+    info,
+    github,
+    theme,
+  }
 
   // local state
   public drawer: boolean = false
