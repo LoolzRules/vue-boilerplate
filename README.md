@@ -12,7 +12,7 @@ Personal boilerplate that is based on the following stack:
 - axios
 
 #### TODO list
-- Add PWA logic
+- Refactor PWA logic
 - Improve home page
 
 #### Commands
