@@ -15,7 +15,7 @@ app.use( serveStatic( staticDir ) )
 
 // process API requests
 app.get( '/something', ( req, res ) => {
-  res.send( 'Here is some info' )
+  res.send( 'You are awesome!' )
 } )
 
 // Send index page for anything
