@@ -44,32 +44,31 @@
     v-app-bar(app, color="primary", dark)
       v-app-bar-nav-icon(@click="switchDrawer")
         v-icon {{ icons.menu }}
-      v-spacer
-      v-toolbar-items
-        v-menu(absolute, v-model="localeMenu")
-          template(#activator="{ on }")
-            v-btn(
-              v-on="on",
-              :name="$t( 'App.menus.localeButtonName' )",
-              depressed,
-              icon
-            ) {{ locales[localeIndex] }}
-          template(#default)
-            v-list
-              v-list-item(
-                v-for="(locale, index) in locales",
-                :key="index",
-                @click="updateLocale(index)",
-              )
-                v-list-item-title {{ locale.toUpperCase() }}
 
-        v-btn(
-          @click="switchTheme",
-          :name="$t( 'App.menus.themeButtonName' )",
-          depressed,
-          icon
-        )
-          v-icon {{ icons.theme }}
+      v-spacer
+
+      v-menu(absolute, v-model="localeMenu")
+        template(#activator="{ on }")
+          v-btn(
+            v-on="on",
+            :name="$t( 'App.menus.localeButtonName' )",
+            depressed, rounded, icon,
+          ) {{ locales[localeIndex] }}
+        template(#default)
+          v-list
+            v-list-item(
+              v-for="(locale, index) in locales",
+              :key="index",
+              @click="updateLocale(index)",
+            )
+              v-list-item-title {{ locale.toUpperCase() }}
+
+      v-btn(
+        @click="switchTheme",
+        :name="$t( 'App.menus.themeButtonName' )",
+        depressed, rounded, icon,
+      )
+        v-icon {{ icons.theme }}
 
     v-content
       router-view
@@ -116,7 +115,7 @@ export default class App extends Vue {
   }
 
   @Watch( '$route' )
-  onTitleShouldChange() {
+  onTitleShouldChange(): void {
     document.title = this.$t( this.$route.meta.title ) as string
   }
 

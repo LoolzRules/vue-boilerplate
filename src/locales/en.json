@@ -61,7 +61,25 @@
       "loadedText": [
         "Oops, did not load",
         "Wow, it loaded!"
-      ]
+      ],
+      "loginForm": {
+        "title": "Login",
+        "name": {
+          "label": "Name",
+          "errors": [
+            "Name is required",
+            "Name must be less than 10 characters"
+          ]
+        },
+        "email": {
+          "label": "E-mail",
+          "errors": [
+            "E-mail is required",
+            "E-mail must be valid"
+          ]
+        },
+        "submit": "Submit"
+      }
     },
     "About": {
       "title": "About",

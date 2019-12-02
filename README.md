@@ -14,7 +14,6 @@ Personal boilerplate that is based on the following stack:
 #### TODO list
 - Refactor PWA logic
 - Improve home page
-- add Vuelidate for forms
 - add error handling
 - Improve treeshaking
 - add filters demo
