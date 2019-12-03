@@ -1,5 +1,5 @@
 import api from './api'
-import { SomethingResponseData } from '@/requests/responses'
+import { SomethingResponseData } from './responses'
 
 export const getSomething = (): Promise<SomethingResponseData> => {
   return api.get( '/something' )
