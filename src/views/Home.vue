@@ -49,7 +49,7 @@ export default class Home extends Vue {
   requestSomething(): void {
     getSomething()
       .then( resp => {
-        console.info( `Here is the info I tried to load: ${resp}` )
+        console.info( `Here is what I requested: ${resp.message}` )
         this.success = true
       } )
       .catch( () => {

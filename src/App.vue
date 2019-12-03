@@ -19,7 +19,7 @@
         each route in routes
           v-list-item(:to=`{ name: "${route.name}" }`)
             v-list-item-icon
-              v-icon= `{{ icons.${route.icon} }}`
+              v-icon= `$${route.icon}`
             v-list-item-content
               v-list-item-title(v-t=`'App.nav.${route.name}'`)
 
@@ -37,13 +37,13 @@
         each link in links
           v-list-item(href=link.href, target="_blank")
             v-list-item-icon
-              v-icon= `{{ icons.${link.icon} }}`
+              v-icon= `$${link.icon}`
             v-list-item-content
               v-list-item-title(v-t=`'App.nav.${link.name}'`)
 
     v-app-bar(app, color="primary", dark)
       v-app-bar-nav-icon(@click="switchDrawer")
-        v-icon {{ icons.menu }}
+        v-icon $menu
 
       v-spacer
 
@@ -68,7 +68,7 @@
         :name="$t( 'App.menus.themeButtonName' )",
         depressed, rounded, icon,
       )
-        v-icon {{ icons.theme }}
+        v-icon $theme
 
     v-content
       router-view
@@ -77,7 +77,6 @@
 <script lang="ts">
 import { Component, Vue, Watch } from 'vue-property-decorator'
 import { mapState } from 'vuex'
-import { github, home, info, menu, theme } from '@/assets/icons'
 
 @Component( {
   computed: {
@@ -93,15 +92,6 @@ export default class App extends Vue {
   public locales!: Array<string>
   public localeIndex!: number
   public themeIsDark!: boolean
-
-  // it is important to manually import icons to reduce bundle size
-  public icons = {
-    menu,
-    home,
-    info,
-    github,
-    theme,
-  }
 
   // local state
   public drawer: boolean = false

@@ -1,7 +1,72 @@
-import { mdiGithubCircle, mdiHomeOutline, mdiInformationOutline, mdiMenu, mdiThemeLightDark } from '@mdi/js'
+import {
+  mdiAlertCircleOutline,
+  mdiAlertOutline,
+  mdiCancel,
+  mdiCheckboxBlankOutline,
+  mdiCheckboxMarkedOutline,
+  mdiCheckCircleOutline,
+  mdiChevronDown,
+  mdiChevronLeft,
+  mdiChevronRight,
+  mdiCircle,
+  mdiClose,
+  mdiCloseCircle,
+  mdiFile,
+  mdiGithubCircle,
+  mdiHomeOutline,
+  mdiInformationOutline,
+  mdiLoading,
+  mdiMenu,
+  mdiMenuDown,
+  mdiMinusBoxOutline,
+  mdiPageFirst,
+  mdiPageLast,
+  mdiPencilOutline,
+  mdiRadioboxBlank,
+  mdiRadioboxMarked,
+  mdiSort,
+  mdiStar,
+  mdiStarHalf,
+  mdiStarOutline,
+  mdiThemeLightDark,
+  mdiUnfoldMoreVertical
+} from '@mdi/js'
 
-export const menu = mdiMenu
-export const home = mdiHomeOutline
-export const info = mdiInformationOutline
-export const github = mdiGithubCircle
-export const theme = mdiThemeLightDark
+export default {
+  complete: mdiCheckCircleOutline,
+  cancel: mdiCancel,
+  close: mdiClose,
+  delete: mdiCloseCircle, // delete (e.g. v-chip close)
+  clear: mdiClose,
+  success: mdiCheckCircleOutline,
+  info: mdiInformationOutline,
+  warning: mdiAlertCircleOutline,
+  error: mdiAlertOutline,
+  prev: mdiChevronLeft,
+  next: mdiChevronRight,
+  checkboxOn: mdiCheckboxMarkedOutline,
+  checkboxOff: mdiCheckboxBlankOutline,
+  checkboxIndeterminate: mdiMinusBoxOutline,
+  delimiter: mdiCircle, // for carousel
+  sort: mdiSort,
+  expand: mdiChevronDown,
+  menu: mdiMenu,
+  subgroup: mdiMenuDown,
+  dropdown: mdiMenuDown,
+  radioOn: mdiRadioboxMarked,
+  radioOff: mdiRadioboxBlank,
+  edit: mdiPencilOutline,
+  ratingEmpty: mdiStarOutline,
+  ratingFull: mdiStar,
+  ratingHalf: mdiStarHalf,
+  loading: mdiLoading,
+  first: mdiPageFirst,
+  last: mdiPageLast,
+  unfold: mdiUnfoldMoreVertical,
+  file: mdiFile,
+
+  // Those are non-default
+  home: mdiHomeOutline,
+  theme: mdiThemeLightDark,
+  github: mdiGithubCircle,
+}

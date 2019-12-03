@@ -3,10 +3,15 @@ import Vuetify from 'vuetify/lib'
 import ru from 'vuetify/src/locale/ru'
 import en from 'vuetify/src/locale/en'
 import colors from 'vuetify/lib/util/colors'
+import icons from '@/assets/icons' // it is important to manually import icons to reduce bundle size
 
 Vue.use( Vuetify )
 
 export default new Vuetify( {
+  icons: {
+    iconfont: 'mdiSvg',
+    values: icons,
+  },
   lang: {
     locales: { en, ru, },
     current: 'en',
