@@ -11,4 +11,4 @@ apiRouter.get( '*', ( req, res ) => {
     .json( { error: 'Unknown API request', } )
 } )
 
-export default apiRouter
+module.exports = apiRouter

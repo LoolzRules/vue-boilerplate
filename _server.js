@@ -24,6 +24,4 @@ app.get( '*', ( req, res ) => {
   res.sendFile( path.join( staticDir, 'index.html' ) )
 } )
 
-console.info( process.env )
-console.info( port )
 app.listen( port )
