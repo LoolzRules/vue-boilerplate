@@ -2,6 +2,7 @@ const path = require( 'path' )
 const express = require( 'express' )
 const serveStatic = require( 'serve-static' )
 const compression = require( 'compression' )
+const apiRouter = require( './_api' )
 
 const app = express()
 const port = process.env.PORT
@@ -14,9 +15,7 @@ app.use( compression() )
 app.use( serveStatic( staticDir ) )
 
 // process API requests
-app.get( '/something', ( req, res ) => {
-  res.json( { message: 'You are awesome!', } )
-} )
+app.get( '/api/v1', apiRouter )
 
 // Send index page for anything
 // not matching the requests above,
