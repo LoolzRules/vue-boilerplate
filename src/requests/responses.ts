@@ -1,3 +1,3 @@
 export class SomethingResponseData {
-  public message!: string
+  public readonly message!: string
 }

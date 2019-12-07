@@ -101,7 +101,6 @@ export default class App extends Vue {
     this.$i18n.locale = this.locales[this.localeIndex]
     this.$vuetify.lang.current = this.locales[this.localeIndex]
     this.$vuetify.theme.dark = this.themeIsDark
-    console.info( process.env.VUE_APP_TITLE )
   }
 
   @Watch( '$route' )
