@@ -6,7 +6,6 @@ import vuetify from './plugins/vuetify'
 import i18n from './plugins/i18n'
 import './registerServiceWorker'
 import 'roboto-fontface/css/roboto/roboto-fontface.css'
-import '@mdi/font/css/materialdesignicons.css'
 
 const isProduction = process.env.NODE_ENV === 'production'
 Vue.config.productionTip = isProduction

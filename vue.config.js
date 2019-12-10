@@ -16,11 +16,25 @@ module.exports = {
       enableInSFC: false,
     },
   },
+  configureWebpack: {
+    module: {
+      rules: [
+        {
+          test: /\.(ttf|otf|eot|woff|woff2)$/,
+          use: {
+            loader: 'file-loader',
+            options: {
+              name: 'fonts/[name].[ext]',
+            },
+          },
+        },
+      ],
+    },
+  },
   pwa: {
     workboxOptions: {
       exclude: [
-        // do not match Roboto-Bold.*.woff2, Roboto-Medium.*.woff2 and Roboto-Regular.*.woff2
-        /fonts\/(?!Roboto-((Bold)|(Medium)|(Regular))\..*\.woff2$)/,
+        /fonts/,
         /img\/icons/,
         /\.map$/,
         /^manifest.*\.js$/,
