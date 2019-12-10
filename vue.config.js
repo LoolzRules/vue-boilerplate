@@ -19,7 +19,8 @@ module.exports = {
   pwa: {
     workboxOptions: {
       exclude: [
-        /fonts/,
+        // do not match Roboto-Bold.*.woff2, Roboto-Medium.*.woff2 and Roboto-Regular.*.woff2
+        /fonts\/(?!Roboto-((Bold)|(Medium)|(Regular))\..*\.woff2$)/,
         /img\/icons/,
         /\.map$/,
         /^manifest.*\.js$/,

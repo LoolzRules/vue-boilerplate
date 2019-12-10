@@ -15,7 +15,7 @@ app.use( compression() )
 app.use( serveStatic( staticDir ) )
 
 // process API requests
-app.get( '/api/v1', apiRouter )
+app.use( '/api/v1', apiRouter )
 
 // Send index page for anything
 // not matching the requests above,
