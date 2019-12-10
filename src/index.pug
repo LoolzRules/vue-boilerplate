@@ -14,7 +14,7 @@ html(lang="en")
       ]
 
     each fontName in fontNames
-      link(href=`fonts/${fontName}.woff2` rel="preload" as="font" type="font/woff2" crossorigin)
+      link(href=`/fonts/${fontName}.woff2` rel="preload" as="font" crossorigin)
 
     title= process.env.VUE_APP_TITLE
 
