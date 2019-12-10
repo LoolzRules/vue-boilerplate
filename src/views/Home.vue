@@ -15,7 +15,9 @@ import { Component, Vue } from 'vue-property-decorator'
 import LoginForm from '@/components/LoginForm.vue'
 
 @Component( {
-  components: { LoginForm, },
+  components: {
+    LoginForm,
+  },
 } )
 export default class Home extends Vue {
   loading: boolean = true

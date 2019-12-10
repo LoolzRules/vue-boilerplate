@@ -12,8 +12,6 @@ Personal boilerplate that is based on the following stack:
 - axios
 
 #### TODO list
-- Re-implement PWA logic
-- add error handling
 - Improve treeshaking
 - add filters demo
 
