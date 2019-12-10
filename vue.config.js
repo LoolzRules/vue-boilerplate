@@ -16,36 +16,35 @@ module.exports = {
       enableInSFC: false,
     },
   },
-  configureWebpack: {
-    module: {
-      rules: [
-        {
-          test: /\.(ttf|otf|eot|woff|woff2)$/,
-          use: {
-            loader: 'file-loader',
-            options: {
-              name: 'fonts/[name].[ext]',
-            },
-          },
-        },
-      ],
-    },
+  chainWebpack: config => {
+    config.module
+      .rule( 'fonts' ).uses.clear()
+
+    config.module
+      .rule( 'fonts' )
+      .test( /\.(woff2?|eot|ttf|otf)(\?.*)?$/i )
+      .use( 'loader' )
+      .loader( 'file-loader' )
+      .options( {
+        name: 'fonts/[name].[ext]',
+      } )
+    return config
   },
   pwa: {
     workboxOptions: {
       exclude: [
-        /fonts/,
-        /img\/icons/,
+        /fonts\//,
+        /img\//,
         /\.map$/,
         /^manifest.*\.js$/,
       ],
       runtimeCaching: [
         {
-          urlPattern: /fonts/,
+          urlPattern: /fonts\//,
           handler: 'CacheFirst',
         },
         {
-          urlPattern: /img/,
+          urlPattern: /img\//,
           handler: 'CacheFirst',
         },
       ],
