@@ -42,7 +42,10 @@
               v-list-item-title(v-t=`'App.nav.${link.name}'`)
 
     v-app-bar(app, color="primary", dark)
-      v-app-bar-nav-icon(@click="switchDrawer", :name="$t( 'App.nav.drawer' )")
+      v-app-bar-nav-icon(
+        @click="switchDrawer",
+        :aria-label="$t( 'App.nav.drawer' )"
+      )
         v-icon $menu
 
       v-spacer
@@ -51,7 +54,7 @@
         template(#activator="{ on }")
           v-btn(
             v-on="on",
-            :name="$t( 'App.menus.localeButtonName' )",
+            :aria-label="$t( 'App.menus.localeButtonName' )",
             depressed, rounded, icon,
           ) {{ locales[localeIndex] }}
         template(#default)
@@ -65,7 +68,7 @@
 
       v-btn(
         @click="switchTheme",
-        :name="$t( 'App.menus.themeButtonName' )",
+        :aria-label="$t( 'App.menus.themeButtonName' )",
         depressed, rounded, icon,
       )
         v-icon $theme
