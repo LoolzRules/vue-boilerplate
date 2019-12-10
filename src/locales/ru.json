@@ -1,6 +1,7 @@
 {
   "App": {
     "nav": {
+      "drawer": "Боковое меню",
       "home": "@:views.Home.title",
       "about": "@:views.About.title"
     },

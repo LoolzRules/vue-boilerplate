@@ -2,6 +2,7 @@
   "App": {
     "name": "vue-boilerplate",
     "nav": {
+      "drawer": "Side menu",
       "home": "@:views.Home.title",
       "about": "@:views.About.title",
       "github": "GitHub"

@@ -1,5 +1,5 @@
 <template lang="pug">
-  - const attrs = { target: "_blank", rel: "noopener" }
+  - const attrs = { target: "_blank", rel: "noopener noreferrer" }
   v-flex(shrink)
     h1 {{ msg }}
     p

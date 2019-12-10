@@ -35,14 +35,14 @@
           ]
 
         each link in links
-          v-list-item(href=link.href, target="_blank")
+          v-list-item(href=link.href, target="_blank", rel="noopener noreferrer")
             v-list-item-icon
               v-icon= `$${link.icon}`
             v-list-item-content
               v-list-item-title(v-t=`'App.nav.${link.name}'`)
 
     v-app-bar(app, color="primary", dark)
-      v-app-bar-nav-icon(@click="switchDrawer")
+      v-app-bar-nav-icon(@click="switchDrawer", :name="$t( 'App.nav.drawer' )")
         v-icon $menu
 
       v-spacer

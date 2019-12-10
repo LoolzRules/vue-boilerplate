@@ -24,6 +24,16 @@ module.exports = {
         /\.map$/,
         /^manifest.*\.js$/,
       ],
+      runtimeCaching: [
+        {
+          urlPattern: /fonts/,
+          handler: 'CacheFirst',
+        },
+        {
+          urlPattern: /img/,
+          handler: 'CacheFirst',
+        },
+      ],
     },
   },
 }
