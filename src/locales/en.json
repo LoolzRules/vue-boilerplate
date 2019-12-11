@@ -58,11 +58,8 @@
   "views": {
     "Home": {
       "title": "Home",
-      "main": "I'm trying to load something, check the console",
-      "loadedText": [
-        "Oops, did not load",
-        "Wow, it loaded!"
-      ],
+      "main": "I'm trying to load something, wait a bit",
+      "loadedText": "Oops, it didn’t work",
       "loginForm": {
         "title": "Login",
         "name": {

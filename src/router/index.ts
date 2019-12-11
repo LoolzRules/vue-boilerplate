@@ -15,6 +15,7 @@ const routes = [
     name: 'home',
     component: Home,
     // If props set to true, any params will be passed to Home
+    // but they will not be present in url
     props: true,
     meta: {
       title: 'views.Home.title',

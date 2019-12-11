@@ -5,13 +5,14 @@
 
       h3.mt-4(v-t="'views.Home.main'")
       v-skeleton-loader(v-if="loading", type="text", width="180px", loading)
-      h4(v-else v-t="`views.Home.loadedText[${+success}]`")
+      h4(v-else) {{ success ? message : $t( 'views.Home.loadedText' ) }}
 
 </template>
 
 <script lang="ts">
 import { getSomething } from '@/requests'
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue, Watch } from 'vue-property-decorator'
+import { Getter } from 'vuex-class'
 import LoginForm from '@/components/LoginForm.vue'
 
 @Component( {
@@ -20,21 +21,30 @@ import LoginForm from '@/components/LoginForm.vue'
   },
 } )
 export default class Home extends Vue {
+  @Getter currentLocale!: string
+
   loading: boolean = true
   success: boolean = false
+  message: string = ''
 
   mounted() {
+    this.requestSomething()
+  }
+
+  @Watch( 'currentLocale' )
+  onErrorsShouldChange(): void {
+    // perform api request due to locale change
     this.requestSomething()
   }
 
   requestSomething(): void {
     getSomething()
       .then( resp => {
-        console.info( `Here is what I requested: ${resp.message}` )
+        this.message = resp.message
         this.success = true
       } )
       .catch( _ => {
-        console.error( 'Bad connection with backend?' )
+        console.error( 'Bad connection with API' )
         this.success = false
       } )
       .finally( () => {

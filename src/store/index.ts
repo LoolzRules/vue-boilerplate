@@ -27,4 +27,9 @@ export default new Vuex.Store( {
     },
   },
   modules: {},
+  getters: {
+    currentLocale( state: CoreState ): string {
+      return state.locales[state.localeIndex]
+    },
+  },
 } )

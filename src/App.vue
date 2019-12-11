@@ -79,26 +79,20 @@
 
 <script lang="ts">
 import { Component, Vue, Watch } from 'vue-property-decorator'
-import { mapState } from 'vuex'
+import { Action, State } from 'vuex-class'
 
-@Component( {
-  computed: {
-    ...mapState( [
-      'locales',
-      'localeIndex',
-      'themeIsDark',
-    ] ),
-  },
-} )
+@Component
 export default class App extends Vue {
   // mapped from global state
-  public locales!: Array<string>
-  public localeIndex!: number
-  public themeIsDark!: boolean
+  @State locales!: Array<string>
+  @State localeIndex!: number
+  @State themeIsDark!: boolean
+  @Action setLocale!: ( index: number ) => Promise<any>
+  @Action setTheme!: ( themeIsDark: boolean ) => Promise<any>
 
   // local state
-  public drawer: boolean = false
-  public localeMenu: boolean = false
+  drawer: boolean = false
+  localeMenu: boolean = false
 
   beforeMount() {
     this.$i18n.locale = this.locales[this.localeIndex]
@@ -116,7 +110,7 @@ export default class App extends Vue {
   }
 
   updateLocale( index: number ): void {
-    this.$store.dispatch( 'setLocale', index )
+    this.setLocale( index )
       .then( _ => {
         this.$i18n.locale = this.locales[this.localeIndex]
         this.$vuetify.lang.current = this.locales[this.localeIndex]
@@ -125,7 +119,7 @@ export default class App extends Vue {
   }
 
   switchTheme(): void {
-    this.$store.dispatch( 'setTheme', !this.themeIsDark )
+    this.setTheme( !this.themeIsDark )
       .then( _ => {
         this.$vuetify.theme.dark = this.themeIsDark
       } )

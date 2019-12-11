@@ -73,6 +73,7 @@ export default class LoginForm extends Vue {
 
   @Watch( '$i18n.locale' )
   onErrorsShouldChange(): void {
+    // unfortunately, vuetify components
     ( this.$refs.form as any ).validate()
   }
 

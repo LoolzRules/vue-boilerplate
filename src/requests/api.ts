@@ -7,8 +7,9 @@ const api = axios.create( {
 } )
 
 api.interceptors.request.use( config => {
-  const locale = store.state.locales[store.state.localeIndex]
-  config.baseURL += `/${locale}`
+  // Add language to request
+  config.baseURL += `/${store.getters.currentLocale}`
+  // We use JSON to communicate with backend
   config.headers['Accept'] = 'application/json'
   config.headers['Content-Type'] = 'application/json'
   return config

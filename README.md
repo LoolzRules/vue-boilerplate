@@ -2,26 +2,29 @@
 
 [link to heroku app](https://loolzrules-vue-boilerplate.herokuapp.com) - check it out!
 
-Personal boilerplate that is based on the following stack:
-- Vue (vuex, vue-router)
-- Vuetify
+### What is this?
+
+This repository is a frontend boilerplate that is based on the following stack:
 - TypeScript
-- Pug
-- Sass
-- i18n
-- axios
-- express (simple server)
+- Vue (vuex, vue-router)
+- Vuetify (material component library)
+- Pug (template engine)
+- Sass (style sheet language)
+- i18n (localisation)
+- axios (api requests)
+- express (simple backend)
 
-#### TODO list
-- Improve treeshaking
-- add filters demo
+### TODO list
+- Setup treeshaking to reduce the size of vendors chunk
 
-#### Commands
+### Commands
 - `npm install` - project setup
 - `npm run serve` - compiles and hot-reloads for development
-- `npm run build` - compiles and minifies for production
-- `npm run start` - serves production bundle
+- `npm run build && npm run start` - compiles and serves production bundle
 - `npm run lint` - lints and fixes files
+- `i18n:report` - makes report on localisation string usage
 
-##### Customize configuration
+All commands are present in `package.json`
+
+### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

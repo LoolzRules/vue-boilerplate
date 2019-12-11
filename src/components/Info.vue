@@ -50,7 +50,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
   name: 'info',
 } )
 export default class Info extends Vue {
-  @Prop() private msg!: string
+  @Prop() msg!: string
 }
 </script>
 
