@@ -9,7 +9,7 @@ const staticDir = path.join( __dirname, 'dist' )
 
 // redirect to https
 app.use( function( req, res, next ) {
-  console.info( req )
+  console.info( req.headers )
   // https://community.pivotal.io/s/article/Purpose-of-the-X-Forwarded-Proto-HTTP-Header
   // if ( req.headers['x-forwarded-proto'] === 'https' ) {
   //   next()
