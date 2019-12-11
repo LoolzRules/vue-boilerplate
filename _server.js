@@ -9,11 +9,13 @@ const staticDir = path.join( __dirname, 'dist' )
 
 // redirect to https
 app.use( function( req, res, next ) {
-  // https://community.pivotal.io/s/article/Purpose-of-the-X-Forwarded-Proto-HTTP-Header
+  // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-Proto
   if ( req.headers['x-forwarded-proto'] === 'https' ) {
-    return next()
+    console.info( 'https' )
+    next()
+  } else {
+    res.redirect( 301, 'https://' + req.headers.host + req.url )
   }
-  res.redirect( 301, 'https://' + req.headers.host + req.url )
 } )
 
 // use middleware to compress all files
