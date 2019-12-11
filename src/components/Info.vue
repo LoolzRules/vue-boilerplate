@@ -3,8 +3,8 @@
   v-flex(shrink)
     h1 {{ msg }}
     p
-      | {{ $t('components.Info.main[0]') }}
-      a(href="https://cli.vuejs.org", v-t="'components.Info.main[1]'")&attributes(attrs)
+      | {{ $t('components.Info.main.0') }}
+      a(href="https://cli.vuejs.org", v-t="'components.Info.main.1'")&attributes(attrs)
       | .
     -
       const sections = [
@@ -35,11 +35,11 @@
       ]
 
     each section, ind in sections
-      h3.mt-8(v-t=`'components.Info.sections[${ind}].title'`)
+      h3.mt-8(v-t=`'components.Info.sections.${ind}.title'`)
       ul.pa-0
         each link, i in section
           li.mx-2
-            a(href=link v-t=`'components.Info.sections[${ind}].text[${i}]'`)&attributes(attrs)
+            a(href=link v-t=`'components.Info.sections.${ind}.text.${i}'`)&attributes(attrs)
 
 </template>
 

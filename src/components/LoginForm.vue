@@ -54,21 +54,21 @@ export default class LoginForm extends Vue {
   name: string = ''
   readonly maxNameLength: number = 16
   readonly nameRules: ( ( v: string ) => boolean | string )[] = [
-    v => !!v || this.$root.$t( 'views.Home.loginForm.errors[0]' ) as string,
-    v => ( v.length <= this.maxNameLength ) || this.$root.$t( 'views.Home.loginForm.name.errors[0]' ) as string,
+    v => !!v || this.$root.$t( 'views.Home.loginForm.errors.0' ) as string,
+    v => ( v.length <= this.maxNameLength ) || this.$root.$t( 'views.Home.loginForm.name.errors.0' ) as string,
   ]
 
   email: string = ''
   readonly emailRules: ( ( v: string ) => boolean | string )[] = [
-    v => !!v || this.$root.$t( 'views.Home.loginForm.errors[0]' ) as string,
-    v => /.+@.+\..+/.test( v ) || this.$root.$t( 'views.Home.loginForm.email.errors[0]' ) as string,
+    v => !!v || this.$root.$t( 'views.Home.loginForm.errors.0' ) as string,
+    v => /.+@.+\..+/.test( v ) || this.$root.$t( 'views.Home.loginForm.email.errors.0' ) as string,
   ]
 
   password: string = ''
   readonly minPasswordLength: number = 10
   readonly passwordRules: ( ( v: string ) => boolean | string )[] = [
-    v => !!v || this.$root.$t( 'views.Home.loginForm.errors[0]' ) as string,
-    v => ( v.length >= this.minPasswordLength ) || this.$root.$t( 'views.Home.loginForm.password.errors[0]' ) as string,
+    v => !!v || this.$root.$t( 'views.Home.loginForm.errors.0' ) as string,
+    v => ( v.length >= this.minPasswordLength ) || this.$root.$t( 'views.Home.loginForm.password.errors.0' ) as string,
   ]
 
   @Watch( '$i18n.locale' )

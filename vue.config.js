@@ -32,6 +32,7 @@ module.exports = {
   },
   pwa: {
     workboxOptions: {
+      cleanupOutdatedCaches: true,
       exclude: [
         /fonts\//,
         /img\//,
@@ -47,6 +48,10 @@ module.exports = {
           urlPattern: /img\//,
           handler: 'CacheFirst',
         },
+      ],
+      navigateFallback: '/',
+      navigateFallbackBlacklist: [
+        /\/api\/v1\//,
       ],
     },
   },
