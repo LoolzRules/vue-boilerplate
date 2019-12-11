@@ -5,8 +5,10 @@ const compression = require( 'compression' )
 const apiRouter = require( './_api' )
 
 const app = express()
-const port = process.env.PORT
 const staticDir = path.join( __dirname, 'dist' )
+const ports = process.env.NODE_ENV === 'development'
+  ? [ process.env.PORT, ]
+  : [ process.env.PORT, process.env.PORT_HTTPS, ]
 
 // redirect to https
 app.use( function( req, res, next ) {
@@ -33,4 +35,4 @@ app.get( '*', ( req, res ) => {
   res.sendFile( path.join( staticDir, 'index.html' ) )
 } )
 
-app.listen( port )
+app.listen( ...ports )
