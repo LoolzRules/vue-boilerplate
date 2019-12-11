@@ -3,12 +3,11 @@ const express = require( 'express' )
 const serveStatic = require( 'serve-static' )
 const compression = require( 'compression' )
 const apiRouter = require( './_api' )
+const http = require( 'http' )
+const https = require( 'https' )
 
 const app = express()
 const staticDir = path.join( __dirname, 'dist' )
-const ports = process.env.NODE_ENV === 'development'
-  ? [ process.env.PORT, ]
-  : [ process.env.PORT, process.env.PORT_HTTPS, ]
 
 // redirect to https
 app.use( function( req, res, next ) {
@@ -35,4 +34,12 @@ app.get( '*', ( req, res ) => {
   res.sendFile( path.join( staticDir, 'index.html' ) )
 } )
 
-app.listen( ...ports )
+http
+  .createServer( app )
+  .listen( process.env.PORT )
+
+if ( process.env.NODE_ENV === 'production' ) {
+  https
+    .createServer( app )
+    .listen( process.env.PORT_HTTPS )
+}
