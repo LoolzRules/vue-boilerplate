@@ -8,6 +8,15 @@ const app = express()
 const port = process.env.PORT
 const staticDir = path.join( __dirname, 'dist' )
 
+// redirect to https
+app.use( function( req, res, next ) {
+  if ( req.secure ) {
+    next()
+  } else {
+    res.redirect( 'https://' + req.headers.host + req.url )
+  }
+} )
+
 // use middleware to compress all files
 app.use( compression() )
 
