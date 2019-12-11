@@ -9,7 +9,8 @@ const staticDir = path.join( __dirname, 'dist' )
 
 // redirect to https
 app.use( function( req, res, next ) {
-  if ( !req.secure ) {
+  if ( req.protocol !== 'https' ) {
+    console.info( JSON.stringify( req ) )
     res.redirect( 301, 'https://' + req.headers.host + req.url )
   }
   next()
