@@ -6,18 +6,11 @@ html(lang="en")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     link(rel="icon" href!="favicon.ico")
     meta(name="Description", content="Vue.js boilerplate by @loolzrules")
+    title= process.env.VUE_APP_TITLE
 
-    -
-      const fontNames = [
-        'Roboto-Bold',
-        'Roboto-Medium',
-        'Roboto-Regular',
-      ]
-
-    each fontName in fontNames
+    each fontName in [ 'Roboto-Bold', 'Roboto-Medium', 'Roboto-Regular', ]
       link(href=`/fonts/${fontName}.woff2` rel="preload" as="font" crossorigin)
 
-    title= process.env.VUE_APP_TITLE
 
   body
     noscript

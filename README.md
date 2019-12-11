@@ -10,6 +10,7 @@ Personal boilerplate that is based on the following stack:
 - Sass
 - i18n
 - axios
+- express (simple server)
 
 #### TODO list
 - Improve treeshaking

@@ -1,8 +1,17 @@
 import axios from 'axios'
+import store from '../store'
 
 const api = axios.create( {
   baseURL: '/api/v1',
   timeout: 10000,
+} )
+
+api.interceptors.request.use( config => {
+  const locale = store.state.locales[store.state.localeIndex]
+  config.baseURL += `/${locale}`
+  config.headers['Accept'] = 'application/json'
+  config.headers['Content-Type'] = 'application/json'
+  return config
 } )
 
 api.interceptors.response.use( response => {

@@ -3,7 +3,7 @@ import Vuetify from 'vuetify/lib'
 import ru from 'vuetify/src/locale/ru'
 import en from 'vuetify/src/locale/en'
 import colors from 'vuetify/lib/util/colors'
-import icons from '@/assets/icons' // it is important to manually import icons to reduce bundle size
+import icons from '@/assets/icons'
 
 Vue.use( Vuetify )
 
@@ -13,12 +13,14 @@ export default new Vuetify( {
     values: icons,
   },
   lang: {
-    locales: { en, ru, },
+    locales: {
+      en,
+      ru,
+    },
     current: 'en',
   },
   theme: {
     options: {
-      customProperties: true,
       minifyTheme( css ) {
         return process.env.NODE_ENV === 'production'
           ? css.replace( /[\r\n]/g, '' )

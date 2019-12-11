@@ -2,7 +2,7 @@ const path = require( 'path' )
 const express = require( 'express' )
 const serveStatic = require( 'serve-static' )
 const compression = require( 'compression' )
-const apiRouter = require( './_api' )
+const apiRouter = require( './_apiRouter' )
 
 const app = express()
 const staticDir = path.join( __dirname, 'dist' )
@@ -11,7 +11,6 @@ const staticDir = path.join( __dirname, 'dist' )
 app.use( function( req, res, next ) {
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-Proto
   if ( req.headers['x-forwarded-proto'] === 'https' ) {
-    console.info( 'https' )
     next()
   } else {
     res.redirect( 301, 'https://' + req.headers.host + req.url )
